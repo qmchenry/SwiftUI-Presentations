@@ -9,9 +9,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectorIndex = 0
+    @State private var numbers = ["One","Two","Three"]
+    
     var body: some View {
-        Text("Hello, World!")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        return VStack {
+            Picker("Layouts", selection: $selectorIndex) {
+                  ForEach(0 ..< numbers.count) { index in
+                      Text(self.numbers[index]).tag(index)
+                  }
+              }
+              .pickerStyle(SegmentedPickerStyle())
+            
+            if selectorIndex == 0 {
+                Content0()
+            } else if selectorIndex == 1 {
+                Content1()
+            } else {
+                Content2()
+            }
+        }
     }
 }
 
