@@ -1,3 +1,5 @@
+// from: https://gist.github.com/chriseidhof/d23f82f8a9e85e75bc02be220326199a
+
 import SwiftUI
 
 // Usage: take any view, and call `.mirror()` on it.

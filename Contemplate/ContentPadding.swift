@@ -1,5 +1,5 @@
 //
-//  Content1.swift
+//  ContentPadding.swift
 //  Contemplate
 //
 //  Created by Quinn McHenry on 3/3/20.
@@ -9,8 +9,9 @@
 
 import SwiftUI
 
-struct Content1: View {
+struct ContentPadding: View {
     @State var thing = 0
+    @State var scale = CGFloat(1.3)
     
     var body: some View {
         let dish = HStack {
@@ -40,11 +41,22 @@ struct Content1: View {
                                 Text("not first")
                             }
                         }
-                        """)
+                        """).font(.system(.title, design: .monospaced))
                     }.padding().border(Color.orange)
-                    dish.frame(minWidth: 250, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                    dish
+                        .scaleEffect(3)
+                        .frame(minWidth: 250, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                 }
-                dish.mirror().background(Color.white)
+                dish.mirror()
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                    .scaleEffect(scale)
+                    .background(Color.white)
+                    .gesture(MagnificationGesture(minimumScaleDelta: 0.5)
+                        .onChanged { value in
+                            let reducedValue = sqrt(sqrt(sqrt(value.magnitude)))
+                            self.scale = max(min(self.scale * reducedValue, 2), 0.9)
+                        }
+                    )
             }
         }
     }
@@ -52,6 +64,6 @@ struct Content1: View {
 
 struct Content1_Previews: PreviewProvider {
     static var previews: some View {
-        Content1()
+        ContentPadding()
     }
 }

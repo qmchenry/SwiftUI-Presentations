@@ -10,25 +10,29 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectorIndex = 0
-    @State private var numbers = ["One","Two","Three"]
+    @State private var views = ["Intro", "Simple", "Padding", "Conditional", "State"]
     
     var body: some View {
         return VStack {
-            Picker("Layouts", selection: $selectorIndex) {
-                  ForEach(0 ..< numbers.count) { index in
-                      Text(self.numbers[index]).tag(index)
-                  }
-              }
-              .pickerStyle(SegmentedPickerStyle())
-            
-            if selectorIndex == 0 {
-                Content0()
-            } else if selectorIndex == 1 {
-                Content1()
-            } else {
-                Content2()
+            Picker("Slides", selection: $selectorIndex) {
+                ForEach(0 ..< views.count) { index in
+                    Text(self.views[index]).tag(index)
+                }
             }
-        }
+            .pickerStyle(SegmentedPickerStyle())
+            
+            if views[selectorIndex] == "Intro" {
+                ContentIntro()
+            } else if views[selectorIndex] == "Simple" {
+                ContentSimple()
+            } else if views[selectorIndex] == "Padding" {
+                ContentPadding()
+            } else if views[selectorIndex] == "Conditional" {
+                ContentConditional()
+            } else {
+                ContentStateUpdate()
+            }
+        }.frame(minWidth: 600, minHeight: 400)
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  Content2.swift
+//  ContentSimple.swift
 //  Contemplate
 //
 //  Created by Quinn McHenry on 3/3/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct Content2: View {
+struct ContentSimple: View {
     @State var thing = 0
     
     var body: some View {
@@ -24,9 +24,11 @@ struct Content2: View {
                         Circle()
                           .padding()
                           .background(Color.purple)
-                        """)
+                        """).font(.system(.title, design: .monospaced))
                     }.padding().border(Color.orange)
-                    dish.frame(minWidth: 250, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                    
+                    dish
+                        .frame(minWidth: 250, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                 }
                 dish.mirror()
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
@@ -38,6 +40,6 @@ struct Content2: View {
 
 struct Content2_Previews: PreviewProvider {
     static var previews: some View {
-        Content2()
+        ContentSimple()
     }
 }

@@ -1,5 +1,5 @@
 //
-//  Content0.swift
+//  ContentConditional.swift
 //  Contemplate
 //
 //  Created by Quinn McHenry on 3/3/20.
@@ -8,9 +8,10 @@
 
 import SwiftUI
 
-struct Content0: View {
+struct ContentConditional: View {
     @State var thing = 0
-    
+    @State var scale = CGFloat(1.44)
+
     var body: some View {
         let dish = HStack {
             Text("Ohai")
@@ -35,11 +36,22 @@ struct Content0: View {
                                 Text("not a thing")
                             }
                         }
-                        """)
-                    }.padding().border(Color.orange)
-                    dish.frame(minWidth: 250, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                        """).font(.system(.title, design: .monospaced))
+                        }.padding().border(Color.orange)
+                    dish
+                        .scaleEffect(3)
+                        .frame(minWidth: 250, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                 }
-                dish.mirror().background(Color.white)
+                dish.mirror()
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                    .scaleEffect(scale)
+                    .background(Color.white)
+                    .gesture(MagnificationGesture()
+                        .onChanged { value in
+                            print("\(value.magnitude) \(self.scale)")
+                            self.scale = value.magnitude
+                        }
+                    )
             }
         }
     }
@@ -47,6 +59,6 @@ struct Content0: View {
 
 struct Content0_Previews: PreviewProvider {
     static var previews: some View {
-        Content0()
+        ContentConditional()
     }
 }
