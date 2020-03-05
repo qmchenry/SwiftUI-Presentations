@@ -26,8 +26,7 @@ struct ContentPadding: View {
         return VStack {
             HStack {
                 VStack {
-                    Group {
-                        Text("""
+                    Code(text: """
                         HStack {
                             Text("Ohai")
                             Text("World")
@@ -41,8 +40,7 @@ struct ContentPadding: View {
                                 Text("not first")
                             }
                         }
-                        """).font(.system(.title, design: .monospaced))
-                    }.padding().border(Color.orange)
+                        """)
                     dish
                         .scaleEffect(3)
                         .frame(minWidth: 250, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
@@ -64,6 +62,6 @@ struct ContentPadding: View {
 
 struct Content1_Previews: PreviewProvider {
     static var previews: some View {
-        ContentPadding()
+        ContentPadding().frame(width: 1600, height: 1000)
     }
 }

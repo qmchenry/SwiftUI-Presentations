@@ -69,6 +69,6 @@ struct ContentStateUpdate: View {
 
 struct ContentStateUpdate_Previews: PreviewProvider {
     static var previews: some View {
-        ContentStateUpdate()
+        ContentStateUpdate().frame(width: 1600, height: 900)
     }
 }

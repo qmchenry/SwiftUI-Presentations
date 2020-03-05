@@ -10,36 +10,65 @@ import SwiftUI
 
 struct ContentSimple: View {
     @State var thing = 0
+    @State private var scale: CGFloat = 2.5
+
+    let codes = [
+        "Text(\"Hello Planet!\")",
+        "Text(\"Hello Planet!\")\n  .border(Color.white)",
+        "Text(\"Hello Planet!\")\n  .padding()\n  .border(Color.white)",
+    ]
     
     var body: some View {
-        let dish = Circle()
-            .padding()
-            .background(Color.purple)
-            
+        
+        let dish0 = Text("Hello Planet!")
+        let dish1 = Text("Hello Planet!").border(Color.white)
+        let dish2 = Text("Hello Planet!").padding().border(Color.white)
+
         return VStack {
             HStack {
                 VStack {
+                    Code(text: codes[thing])
                     Group {
-                        Text("""
-                        Circle()
-                          .padding()
-                          .background(Color.purple)
-                        """).font(.system(.title, design: .monospaced))
-                    }.padding().border(Color.orange)
-                    
-                    dish
-                        .frame(minWidth: 250, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                        if thing == 0 {
+                            dish0.scaleEffect(4).simple()
+                        } else if thing == 1 {
+                            dish1.scaleEffect(4).simple()
+                        } else {
+                            dish2.scaleEffect(4).simple()
+                        }
+                    }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 450, maxHeight: .infinity, alignment: .center)
+
+                }.frame(minWidth: 0, maxWidth: 550, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                if thing == 0 {
+                    dish0.mirror().mirrorAdjust(scale: scale)
+                } else if thing == 1 {
+                    dish1.mirror().mirrorAdjust(scale: scale)
+                } else {
+                    dish2.mirror().mirrorAdjust(scale: scale)
                 }
-                dish.mirror()
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-                    .background(Color.white)
             }
+        }.onTapGesture {
+            self.thing = (self.thing + 1) % self.codes.count
         }
+
     }
 }
 
 struct Content2_Previews: PreviewProvider {
     static var previews: some View {
-        ContentSimple()
+        ContentSimple().frame(width: 1600, height: 900)
+    }
+}
+
+extension View {
+    func simple() -> some View {
+        return frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+        .background(Color.purple)
+    }
+    
+    func mirrorAdjust(scale: CGFloat) -> some View {
+        return frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+            .scaleEffect(scale)
+            .background(Color.white)
     }
 }

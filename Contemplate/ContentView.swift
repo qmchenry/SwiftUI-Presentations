@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectorIndex = 0
-    @State private var views = ["Intro", "Simple", "Padding", "Conditional", "State"]
+    @State private var views = ["Intro", "Simple", "VStack", "Conditional", "State"]
     
     var body: some View {
         return VStack {
@@ -25,20 +25,26 @@ struct ContentView: View {
                 ContentIntro()
             } else if views[selectorIndex] == "Simple" {
                 ContentSimple()
-            } else if views[selectorIndex] == "Padding" {
-                ContentPadding()
+            } else if views[selectorIndex] == "VStack" {
+                ContentVStack()
             } else if views[selectorIndex] == "Conditional" {
                 ContentConditional()
             } else {
                 ContentStateUpdate()
             }
-        }.frame(minWidth: 600, minHeight: 400)
+        }.frame(minWidth: 1780, minHeight: 950)
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+
+extension Text {
+    func code() -> some View {
+        return font(.system(.title, design: .monospaced))
+    }
+}
+
