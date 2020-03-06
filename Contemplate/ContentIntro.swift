@@ -11,23 +11,7 @@ import SwiftUI
 struct ContentIntro: View {
     var body: some View {
         VStack {
-            HStack {
-//                VStack {
-//                    Text(
-//                    """
-//                    HStack {
-//                        Text("Ohai")
-//                        if self.thing == 0 {
-//                            Text("is a thing")
-//                        } else {
-//                            Text("not a thing")
-//                        }
-//                    }
-//                    """).font(.system(.title, design: .monospaced))
-//                }
-//                    .padding().border(Color.orange)
-//                    .frame(minWidth: 250, maxWidth: 250, minHeight: 0, maxHeight: .infinity, alignment: .center)
-                
+            HStack {              
                 VStack {
                     Spacer()
                     Text("SwiftUI").font(.system(size: 200, design: .monospaced)).foregroundColor(.orange)

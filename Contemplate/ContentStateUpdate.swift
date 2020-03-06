@@ -26,7 +26,11 @@ struct ContentStateUpdate: View {
                 Button("Click here") {
                     self.counter += 1
                 }
-                if counter > 0 {
+                if counter == 0 {
+                    Text("No clicks, weirdo!")
+                } else if counter == 1 {
+                    Text("\(counter) click, weirdo!")
+                } else {
                     Text("\(counter) clicks, weirdo!")
                 }
             }
@@ -43,8 +47,12 @@ struct ContentStateUpdate: View {
                               Button("Click here") {
                                 self.counter += 1
                               }
-                              if counter > 0 {
-                                Text("\\(counter) clicks, weirdo!")
+                              if counter == 0 {
+                                  Text("No clicks, weirdo!")
+                              } else if counter == 1 {
+                                  Text("\\(counter) click, weirdo!")
+                              } else {
+                                  Text("\\(counter) clicks, weirdo!")
                               }
                             }
                           // ...

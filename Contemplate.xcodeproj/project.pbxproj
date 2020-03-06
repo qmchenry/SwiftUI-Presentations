@@ -22,6 +22,7 @@
 		A9CC6A5D241055B200B8BCCA /* ContentIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC6A5C241055B200B8BCCA /* ContentIntro.swift */; };
 		A9CC6A5F241176E500B8BCCA /* Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC6A5E241176E500B8BCCA /* Code.swift */; };
 		A9CC6A6124118F5700B8BCCA /* ContentVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC6A6024118F5700B8BCCA /* ContentVStack.swift */; };
+		A9CC6A632412D8CC00B8BCCA /* ContentOpaque.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC6A622412D8CC00B8BCCA /* ContentOpaque.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		A9CC6A5C241055B200B8BCCA /* ContentIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentIntro.swift; sourceTree = "<group>"; };
 		A9CC6A5E241176E500B8BCCA /* Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Code.swift; sourceTree = "<group>"; };
 		A9CC6A6024118F5700B8BCCA /* ContentVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentVStack.swift; sourceTree = "<group>"; };
+		A9CC6A622412D8CC00B8BCCA /* ContentOpaque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentOpaque.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,11 +120,12 @@
 				A9BC860424099E990080AC3C /* ContentView.swift */,
 				A9CC6A5E241176E500B8BCCA /* Code.swift */,
 				A9CC6A5C241055B200B8BCCA /* ContentIntro.swift */,
-				A9CC6A54240EC9DC00B8BCCA /* ContentConditional.swift */,
-				A9CC6A56240ECAD700B8BCCA /* ContentPadding.swift */,
 				A9CC6A58240ECB6D00B8BCCA /* ContentSimple.swift */,
 				A9CC6A6024118F5700B8BCCA /* ContentVStack.swift */,
 				A9CC6A5A240EFE3500B8BCCA /* ContentStateUpdate.swift */,
+				A9CC6A622412D8CC00B8BCCA /* ContentOpaque.swift */,
+				A9CC6A54240EC9DC00B8BCCA /* ContentConditional.swift */,
+				A9CC6A56240ECAD700B8BCCA /* ContentPadding.swift */,
 				A9BC863E2409A3EC0080AC3C /* ViewMirror.swift */,
 				A9BC860624099E9A0080AC3C /* Assets.xcassets */,
 				A9BC860B24099E9A0080AC3C /* Main.storyboard */,
@@ -299,6 +302,7 @@
 				A9CC6A59240ECB6D00B8BCCA /* ContentSimple.swift in Sources */,
 				A9CC6A5F241176E500B8BCCA /* Code.swift in Sources */,
 				A9BC863F2409A3EC0080AC3C /* ViewMirror.swift in Sources */,
+				A9CC6A632412D8CC00B8BCCA /* ContentOpaque.swift in Sources */,
 				A9CC6A6124118F5700B8BCCA /* ContentVStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

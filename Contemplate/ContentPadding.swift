@@ -14,12 +14,29 @@ struct ContentPadding: View {
     @State var scale = CGFloat(1.3)
     
     var body: some View {
+        
+//        var dishOkay: some View {
+//            if thing == 0 {
+//                return Text("This is")
+//            } else {
+//                return Text("fine 🔥")
+//            }
+//        }
+//
+//        var dishBzzzt: some View {
+//            if thing == 0 {
+//                return Text("This isn't")
+//            } else {
+//                return Circle()
+//            }
+//        }
+
         let dish = HStack {
             Text("Ohai")
             if self.thing == 0 {
-                Text("is a thing")
+                Text("This is")
             } else {
-                Text("not a thing")
+                Circle()
             }
         }
             

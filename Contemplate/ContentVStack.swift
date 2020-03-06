@@ -21,20 +21,20 @@ struct ContentVStack: View {
         """,
         """
         VStack {
-            Text("Hello")
-              .background(Color.gray)
-            Text("Planet!")
-              .background(Color.blue)
+          Text("Hello")
+            .background(Color.gray)
+          Text("Planet!")
+            .background(Color.blue)
         }
         """,
         """
         VStack {
-            Text("Hello")
-              .padding()
-              .background(Color.gray)
-            Text("Planet!")
-              .background(Color.blue)
-              .padding()
+          Text("Hello")
+            .padding()
+            .background(Color.gray)
+          Text("Planet!")
+            .background(Color.blue)
+            .padding()
         }
         """,
     ]
