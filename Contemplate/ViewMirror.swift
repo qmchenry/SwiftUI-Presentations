@@ -256,7 +256,7 @@ struct MirrorView<Content>: View {
 
 // For presentations, it's nicer to simplify the tree a little bit.
 struct DiagramState {
-    var hue: Hue = .orange
+    var hue: Hue = .cyan
 }
 
 extension Tree where A == String {
@@ -314,11 +314,12 @@ struct Hue: Hashable {
     static let orange = Hue(value: 7)
     static let green = Hue(value: 150)
     static let blue = Hue(value: 220)
+    static let cyan = Hue(value: 194)
 }
 
 struct Colored: Hashable {
     var text: String
-    var hue: Hue = .orange // 0..<256
+    var hue: Hue = .cyan // 0..<256
     init(_ text: String, hue: Hue) {
         self.text = text
         self.hue = hue
@@ -363,13 +364,13 @@ extension String {
 // Builtin Rules
 let highlightSubtreeOfEnvironment = Rule(apply: { tree, state, childState in
     if tree.value == "ModifiedContent" && tree.children[1].value == "_EnvironmentKeyWritingModifier" {
-        childState.hue = .blue
+        childState.hue = .cyan
     }
 })
 
 let highlightPreferenceAncestors = Rule(apply: { tree, state, childState in
     if tree.containsPreference {
-        state.hue = .blue
+        state.hue = .cyan
     }
 })
 
@@ -381,5 +382,15 @@ extension Tree where A == String {
         children.contains {
             $0.isPreference || $0.containsPreference
         }
+    }
+}
+
+extension View {
+    func debug() -> Self {
+        print(Mirror(reflecting: self).subjectType)
+        return self
+    }
+    func debugString() -> String {
+        return "\(Mirror(reflecting: self).subjectType)"
     }
 }

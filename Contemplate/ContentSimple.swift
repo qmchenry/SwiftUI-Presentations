@@ -47,6 +47,13 @@ struct ContentSimple: View {
                     dish2.mirror().mirrorAdjust(scale: scale)
                 }
             }
+            if thing == 0 {
+                Text(dish0.debugString()).code().padding()
+            } else if thing == 1 {
+                Text(dish1.debugString()).code().padding()
+            } else {
+                Text(dish2.debugString()).code().padding()
+            }
         }.onTapGesture {
             self.thing = (self.thing + 1) % self.codes.count
         }
