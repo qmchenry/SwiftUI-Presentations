@@ -21,7 +21,7 @@ struct ContentStateUpdate: View {
     }
 
     var body: some View {
-        let dish = HStack {
+        let dish =
             VStack {
                 Button("Click here") {
                     self.counter += 1
@@ -30,7 +30,6 @@ struct ContentStateUpdate: View {
                     Text("\(counter) clicks, weirdo!")
                 }
             }
-        }
 
         return VStack {
             HStack {
@@ -40,7 +39,7 @@ struct ContentStateUpdate: View {
                         """
                         @State var counter = 0
                         var body: some View {
-                            let dish = HStack {
+                            let dish =
                                 VStack {
                                     Button("Click here") {
                                         self.counter += 1
@@ -49,7 +48,7 @@ struct ContentStateUpdate: View {
                                         Text("\\(counter) clicks, weirdo!")
                                     }
                                 }
-                            }
+                            // ...
                         }
                         """).font(.system(.title, design: .monospaced))
                         }.padding().border(Color.orange)
@@ -63,6 +62,7 @@ struct ContentStateUpdate: View {
                     .background(Color.white)
                     .gesture(magnification)
             }
+            Text(dish.debugString()).code().padding()
         }
     }
 }

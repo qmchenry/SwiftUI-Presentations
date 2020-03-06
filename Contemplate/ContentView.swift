@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectorIndex = 0
-    @State private var views = ["Intro", "Simple", "VStack", "Conditional", "State"]
+    @State private var views = ["Intro", "Simple", "VStack", "State"]
     
     var body: some View {
         return VStack {
@@ -27,8 +27,6 @@ struct ContentView: View {
                 ContentSimple()
             } else if views[selectorIndex] == "VStack" {
                 ContentVStack()
-            } else if views[selectorIndex] == "Conditional" {
-                ContentConditional()
             } else {
                 ContentStateUpdate()
             }
