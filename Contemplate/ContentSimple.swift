@@ -14,15 +14,16 @@ struct ContentSimple: View {
 
     let codes = [
         "Text(\"Hello Planet!\")",
-        "Text(\"Hello Planet!\")\n  .border(Color.white)",
-        "Text(\"Hello Planet!\")\n  .padding()\n  .border(Color.white)",
+        "Text(\"Hello Planet!\")\n  .background(Color.blue)",
+        "Text(\"Hello Planet!\")\n  .background(Color.blue)\n  .border(Color.white)",
     ]
     
     var body: some View {
         
         let dish0 = Text("Hello Planet!")
-        let dish1 = Text("Hello Planet!").border(Color.white)
-        let dish2 = Text("Hello Planet!").padding().border(Color.white)
+        let dish1 = Text("Hello Planet!").background(Color.blue)
+        let dish2 = Text("Hello Planet!").background(Color.blue).border(Color.white)
+//        let dish2a = Text("Hello Planet!").padding().border(Color.white)
 
         return VStack {
             HStack {

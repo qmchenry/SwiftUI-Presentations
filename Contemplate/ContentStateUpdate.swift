@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentStateUpdate: View {
     @State var counter = 0
-    @State private var scale: CGFloat = 1.5
+    @State private var scale: CGFloat = 2
 
     var magnification: some Gesture {
         MagnificationGesture()
@@ -34,33 +34,26 @@ struct ContentStateUpdate: View {
         return VStack {
             HStack {
                 VStack {
-                    Group {
-                        Text(
+                    Code(text:
                         """
                         @State var counter = 0
                         var body: some View {
-                            let dish =
-                                VStack {
-                                    Button("Click here") {
-                                        self.counter += 1
-                                    }
-                                    if counter > 0 {
-                                        Text("\\(counter) clicks, weirdo!")
-                                    }
-                                }
-                            // ...
+                          let dish =
+                            VStack {
+                              Button("Click here") {
+                                self.counter += 1
+                              }
+                              if counter > 0 {
+                                Text("\\(counter) clicks, weirdo!")
+                              }
+                            }
+                          // ...
                         }
-                        """).font(.system(.title, design: .monospaced))
-                        }.padding().border(Color.orange)
-                    dish
-                        .scaleEffect(3)
-                        .frame(minWidth: 250, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                        """).frame(minHeight: 700)
+                    
+                    dish.scaleEffect(3).simple()
                 }
-                dish.mirror()
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-                    .scaleEffect(scale)
-                    .background(Color.white)
-                    .gesture(magnification)
+                dish.mirror().mirrorAdjust(scale: scale)
             }
             Text(dish.debugString()).code().padding()
         }

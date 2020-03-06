@@ -63,7 +63,7 @@ extension Substring {
                 children.append(parseHierarchy())
                 _ = eat(",")
             }
-            return Tree("Tuple", children: children)
+            return Tree("TupleView", children: children)
         }
         
         let name = parseName()
@@ -272,7 +272,7 @@ extension Tree where A == String {
         if value == "Optional" && children.count == 1 {
             let child = children[0]
             return Tree<Colored>(Colored(child.value + "?", hue: state.hue), children: child.children.map { $0._simplified(rules: rules, childState) })
-        } else if value == "TupleView" && children.first?.value == "Tuple" {
+        } else if value == "TupleView" && children.first?.value == "TupleView" {
             return children[0]._simplified(rules: rules, state)
         } else if value == "ModifiedContent" {
             if children.count == 2 {
@@ -291,12 +291,12 @@ extension Tree where A == String {
                         
                     ])
                 }
-                if twoChildModifiers.contains(child.value) {
-                    return Tree<Colored>(Colored(name, hue: state.hue), children: [
-                        children[0]._simplified(rules: rules, childState),
-                        children[1].children[0]._simplified(rules: rules, childState)
-                    ])
-                }
+//                if twoChildModifiers.contains(child.value) {
+//                    return Tree<Colored>(Colored(name, hue: state.hue), children: [
+//                        children[0]._simplified(rules: rules, childState),
+//                        children[1].children[0]._simplified(rules: rules, childState)
+//                    ])
+//                }
             }
         }
         return Tree<Colored>(Colored(value.simplerName, hue: state.hue), children: children.map { $0._simplified(rules: rules, childState) })

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentVStack: View {
     @State var thing = 0
-    @State private var scale: CGFloat = 1.5
+    @State private var scale: CGFloat = 1.9
 
     let codes = [
         """
@@ -22,18 +22,18 @@ struct ContentVStack: View {
         """
         VStack {
             Text("Hello")
-              .border(Color.white)
+              .background(Color.gray)
             Text("Planet!")
-              .border(Color.yellow)
+              .background(Color.blue)
         }
         """,
         """
         VStack {
             Text("Hello")
               .padding()
-              .border(Color.white)
+              .background(Color.gray)
             Text("Planet!")
-              .border(Color.yellow)
+              .background(Color.blue)
               .padding()
         }
         """,
@@ -46,20 +46,13 @@ struct ContentVStack: View {
             Text("Planet!")
         }
         let dish1 = VStack {
-            Text("Hello").border(Color.white)
-            Text("Planet!").border(Color.yellow)
+            Text("Hello").background(Color.gray)
+            Text("Planet!").background(Color.blue)
         }
         let dish2 = VStack {
-            Text("Hello").padding().border(Color.white)
-            Text("Planet!").border(Color.yellow).padding()
+            Text("Hello").padding().background(Color.gray)
+            Text("Planet!").background(Color.blue).padding()
         }
-
-        let dish3 = Circle()
-        let dish4 =
-            VStack {
-                Circle().padding()
-                Text("Hello Planet!")
-            }
 
         return VStack {
             HStack {
@@ -70,12 +63,8 @@ struct ContentVStack: View {
                             dish0.scaleEffect(5).simple()
                         } else if thing == 1 {
                             dish1.scaleEffect(5).simple()
-                        } else if thing == 2 {
-                            dish2.scaleEffect(5).simple()
-                        } else if thing == 3 {
-                            dish3.simple()
                         } else {
-                            dish4.scaleEffect(1).simple()
+                            dish2.scaleEffect(5).simple()
                         }
                     }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 450, maxHeight: .infinity, alignment: .center)
 
