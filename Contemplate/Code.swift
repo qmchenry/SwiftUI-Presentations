@@ -12,9 +12,11 @@ struct Code: View {
     let text: String
     
     var body: some View {
-        Group {
-            Text(text).code()
-            }.padding().border(Color.orange).padding()
+        Text(text)
+            .code()
+            .padding()
+            .border(Color.orange)
+            .padding()
     }
 }
 

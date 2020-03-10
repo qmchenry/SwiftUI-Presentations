@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectorIndex = 0
-    @State private var views = ["Intro", "Simple", "VStack", "State", "Opaques"]
+    @State private var views = ["Intro", "Topics", "Simple", "VStack", "Updating", "Opaque types"]
     
     var body: some View {
         return VStack {
@@ -23,11 +23,13 @@ struct ContentView: View {
             
             if views[selectorIndex] == "Intro" {
                 ContentIntro()
+            } else if views[selectorIndex] == "Topics" {
+                ContentTopics()
             } else if views[selectorIndex] == "Simple" {
                 ContentSimple()
             } else if views[selectorIndex] == "VStack" {
                 ContentVStack()
-            } else if views[selectorIndex] == "State" {
+            } else if views[selectorIndex] == "Updating" {
                 ContentStateUpdate()
             } else {
                 ContentOpaque()

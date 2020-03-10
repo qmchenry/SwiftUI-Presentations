@@ -44,6 +44,7 @@ struct ContentVStack: View {
         let dish0 = VStack {
             Text("Hello")
             Text("Planet!")
+            Text("🧑‍🚀")
         }
         let dish1 = VStack {
             Text("Hello").background(Color.gray)

@@ -42,20 +42,18 @@ struct ContentStateUpdate: View {
                         """
                         @State var counter = 0
                         var body: some View {
-                          let dish =
-                            VStack {
-                              Button("Click here") {
-                                self.counter += 1
-                              }
-                              if counter == 0 {
-                                  Text("No clicks, weirdo!")
-                              } else if counter == 1 {
-                                  Text("\\(counter) click, weirdo!")
-                              } else {
-                                  Text("\\(counter) clicks, weirdo!")
-                              }
+                          VStack {
+                            Button("Click here") {
+                              self.counter += 1
                             }
-                          // ...
+                            if counter == 0 {
+                              Text("No clicks, weirdo!")
+                            } else if counter == 1 {
+                              Text("\\(counter) click, weirdo!")
+                            } else {
+                              Text("\\(counter) clicks, weirdo!")
+                            }
+                          }
                         }
                         """).frame(minHeight: 700)
                     
