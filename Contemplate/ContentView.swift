@@ -36,6 +36,13 @@ struct ContentView: View {
                 ContentOpaque()
             }
         }.frame(minWidth: 1780, minHeight: 950)
+            .gesture(DragGesture().onEnded { (values) in
+                let dx = values.translation.width
+                print(dx)
+                let delta = dx > 300 ? 1 : dx < -300 ? -1 : 0
+                self.selectorIndex = max(0, self.selectorIndex + delta) % self.views.count
+            }
+        )
     }
 }
 
