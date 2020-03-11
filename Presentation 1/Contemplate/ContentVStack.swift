@@ -17,6 +17,7 @@ struct ContentVStack: View {
         VStack {
             Text("Hello")
             Text("Planet!")
+            Text("🧑‍🚀")
         }
         """,
         """
