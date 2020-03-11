@@ -22,14 +22,15 @@ struct ContentPadding: View {
                 return Text("fine 🔥")
             }
         }
-//
-//        var dishBzzzt: some View {
-//            if thing == 0 {
-//                return Text("This isn't")
-//            } else {
-//                return Circle()
-//            }
-//        }
+
+        @ViewBuilder
+        var dishBzzzt: some View {
+            if thing == 0 {
+                return Text("This isn't")
+            } else {
+                return Circle()
+            }
+        }
 
         var dishOkayAgain: some View {
             HStack {
@@ -76,7 +77,7 @@ struct ContentPadding: View {
                         .scaleEffect(3)
                         .frame(minWidth: 250, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                 }
-                dish.mirror()
+                dishBzzzt.mirror()
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                     .scaleEffect(scale)
                     .background(Color.white)
