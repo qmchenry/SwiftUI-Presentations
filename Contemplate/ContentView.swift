@@ -16,7 +16,8 @@ struct ContentView: View {
         return VStack {
             Picker("Slides", selection: $selectorIndex) {
                 ForEach(0 ..< views.count) { index in
-                    Text(self.views[index]).tag(index)
+                    Text(self.views[index])
+                        .tag(index)
                 }
             }
             .pickerStyle(SegmentedPickerStyle())

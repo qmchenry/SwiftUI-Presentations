@@ -15,13 +15,13 @@ struct ContentPadding: View {
     
     var body: some View {
         
-//        var dishOkay: some View {
-//            if thing == 0 {
-//                return Text("This is")
-//            } else {
-//                return Text("fine 🔥")
-//            }
-//        }
+        var dishOkay: some View {
+            if thing == 0 {
+                return Text("This is")
+            } else {
+                return Text("fine 🔥")
+            }
+        }
 //
 //        var dishBzzzt: some View {
 //            if thing == 0 {
@@ -31,12 +31,26 @@ struct ContentPadding: View {
 //            }
 //        }
 
-        let dish = HStack {
-            Text("Ohai")
-            if self.thing == 0 {
-                Text("This is")
-            } else {
-                Circle()
+        var dishOkayAgain: some View {
+            HStack {
+                if self.thing == 0 {
+                    Text("This is")
+                } else {
+                    Circle()
+                }
+            }
+        }
+
+
+
+        var dish: some View {
+            HStack {
+                Text("Ohai")
+                if self.thing == 0 {
+                    Text("This is")
+                } else {
+                    Circle()
+                }
             }
         }
             

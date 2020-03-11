@@ -23,7 +23,6 @@ struct ContentSimple: View {
         let dish0 = Text("Hello Planet!")
         let dish1 = Text("Hello Planet!").background(Color.blue)
         let dish2 = Text("Hello Planet!").background(Color.blue).border(Color.white)
-//        let dish2a = Text("Hello Planet!").padding().border(Color.white)
 
         return VStack {
             HStack {

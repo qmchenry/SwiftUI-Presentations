@@ -11,6 +11,10 @@ import SwiftUI
 struct ContentOpaque: View {
     var body: some View {
         VStack {
+            Text("Opaque types")
+                .font(.system(size: 100, design: .monospaced))
+                .foregroundColor(.orange)
+                .padding()
             Spacer()
             Image("opaque_type").resizable().aspectRatio(contentMode: .fit)
             Spacer()
